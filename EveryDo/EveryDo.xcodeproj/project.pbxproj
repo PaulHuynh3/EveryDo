@@ -14,6 +14,8 @@
 		DA8344471F717DDB001DCFE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8344451F717DDB001DCFE2 /* Main.storyboard */; };
 		DA8344491F717DDB001DCFE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8344481F717DDB001DCFE2 /* Assets.xcassets */; };
 		DA83444C1F717DDB001DCFE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA83444A1F717DDB001DCFE2 /* LaunchScreen.storyboard */; };
+		DA8344551F717E3B001DCFE2 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8344541F717E3B001DCFE2 /* Todo.m */; };
+		DA8344581F7184DE001DCFE2 /* TodoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8344571F7184DE001DCFE2 /* TodoListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		DA8344481F717DDB001DCFE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA83444B1F717DDB001DCFE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA83444D1F717DDB001DCFE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA8344531F717E3B001DCFE2 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		DA8344541F717E3B001DCFE2 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		DA8344561F7184DE001DCFE2 /* TodoListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoListTableViewCell.h; sourceTree = "<group>"; };
+		DA8344571F7184DE001DCFE2 /* TodoListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +67,15 @@
 		DA8344381F717DDB001DCFE2 /* EveryDo */ = {
 			isa = PBXGroup;
 			children = (
-				DA83443C1F717DDB001DCFE2 /* AppDelegate.h */,
-				DA83443D1F717DDB001DCFE2 /* AppDelegate.m */,
 				DA83443F1F717DDB001DCFE2 /* MasterViewController.h */,
 				DA8344401F717DDB001DCFE2 /* MasterViewController.m */,
 				DA8344421F717DDB001DCFE2 /* DetailViewController.h */,
 				DA8344431F717DDB001DCFE2 /* DetailViewController.m */,
 				DA8344451F717DDB001DCFE2 /* Main.storyboard */,
-				DA8344481F717DDB001DCFE2 /* Assets.xcassets */,
-				DA83444A1F717DDB001DCFE2 /* LaunchScreen.storyboard */,
-				DA83444D1F717DDB001DCFE2 /* Info.plist */,
+				DA8344531F717E3B001DCFE2 /* Todo.h */,
+				DA8344541F717E3B001DCFE2 /* Todo.m */,
+				DA8344561F7184DE001DCFE2 /* TodoListTableViewCell.h */,
+				DA8344571F7184DE001DCFE2 /* TodoListTableViewCell.m */,
 				DA8344391F717DDB001DCFE2 /* Supporting Files */,
 			);
 			path = EveryDo;
@@ -79,6 +84,11 @@
 		DA8344391F717DDB001DCFE2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA83443C1F717DDB001DCFE2 /* AppDelegate.h */,
+				DA83443D1F717DDB001DCFE2 /* AppDelegate.m */,
+				DA8344481F717DDB001DCFE2 /* Assets.xcassets */,
+				DA83444A1F717DDB001DCFE2 /* LaunchScreen.storyboard */,
+				DA83444D1F717DDB001DCFE2 /* Info.plist */,
 				DA83443A1F717DDB001DCFE2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -155,6 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8344551F717E3B001DCFE2 /* Todo.m in Sources */,
+				DA8344581F7184DE001DCFE2 /* TodoListTableViewCell.m in Sources */,
 				DA83443E1F717DDB001DCFE2 /* AppDelegate.m in Sources */,
 				DA8344411F717DDB001DCFE2 /* MasterViewController.m in Sources */,
 				DA83443B1F717DDB001DCFE2 /* main.m in Sources */,
