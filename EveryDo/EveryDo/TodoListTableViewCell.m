@@ -21,9 +21,6 @@
     // Configure the view for the selected state
 }
 
-/* 
- Create a custom UITableViewCell subclass that displays the title, a oner-line preview of the task description, the priority level, and strikethrough text of all othe text if the task is completed. This will require you to implement the delegate and data source methods to display a cell for each todo item.
- */
 
 
 

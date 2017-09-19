@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface TodoListTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *firstLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *priorityLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *boolLabel;
+
+
 
 @end

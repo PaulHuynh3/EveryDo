@@ -14,8 +14,8 @@
 @property (nonatomic,strong) NSString* todoDescription;
 @property (nonatomic) NSInteger priorityNumber;
 @property (nonatomic) BOOL isCompleted;
-@property (nonatomic,strong) NSArray* todoArray;
 
+-(instancetype)initWithTitle:(NSString*)title description:(NSString*)description priorityNumber:(NSInteger)number complete:(BOOL)isCompleted;
 
                  
 
