@@ -10,10 +10,13 @@
 #import "DetailViewController.h"
 #import "Todo.h"
 #import "TodoListTableViewCell.h"
+#import "AddItemViewController.h"
 
-@interface MasterViewController ()
-@property (nonatomic) NSMutableArray *objects;
+//add my new delegate onto the array
+@interface MasterViewController () <AddItemViewControllerDelegate>
 @property(nonatomic)NSMutableArray <Todo*> *todoListArray;
+
+
 @end
 
 @implementation MasterViewController
@@ -21,8 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     [self createTodoObjects];
     [self.tableView reloadData];
  
@@ -31,15 +32,6 @@
 - (void)viewWillAppear:(BOOL)animated {
 }
 
-
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
 
 #pragma mark - Create todo Objects
 -(void)createTodoObjects{
@@ -57,14 +49,31 @@
 
 #pragma mark - Segues
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
-        [controller setDetailItem:object];
+        
+        DetailViewController *controller = (DetailViewController*)[segue destinationViewController];
+        
+        //calling the tableview's property self.tableview (its uitableviewcontroller)
+        // calling the method and using the row
+        controller.detailItem =  self.todoListArray[self.tableView.indexPathForSelectedRow.row];
+        
+        
+        }
+    
+    //this segue savs user's items and adds it to the first view
+    if ([[segue identifier] isEqualToString:@"addItems"]){
+        
+        AddItemViewController *addController = [segue destinationViewController];
+        addController.addDelegate = self;
     }
+
+
 }
+
+
+
 
 
 #pragma mark - Table View
@@ -82,7 +91,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TodoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    //you have to specify the todo property of title, priority #, description, completed etc.
+    //specify todo property of title, priority # etc (layer on layer)
     //need the NSMutableArray<Todo*> *todoListArray else i would have to make the class.title
     cell.titleLabel.text = self.todoListArray[indexPath.row].title;
     cell.descriptionLabel.text = self.todoListArray[indexPath.row].todoDescription;
@@ -100,6 +109,8 @@
         cell.boolLabel.text =@"NOT DONE";
     }
     
+    
+    
     return cell;
 }
 
@@ -109,14 +120,6 @@
     return YES;
 }
 
-
--(void)setDetailItem{
-
-
-
-    
-
-}
 
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -129,12 +132,12 @@
 //}
 
 
-
-
-/*
- Create a custom UITableViewCell subclass that displays the title, a oner-line preview of the task description, the priority level, and strikethrough text of all othe text if the task is completed. This will require you to implement the delegate and data source methods to display a cell for each todo item.
- */
-
+-(void)addObjectTodo:(Todo*)todo{
+    
+    [self.todoListArray addObject:todo];
+    [self.tableView reloadData];
+    
+}
 
 
 @end

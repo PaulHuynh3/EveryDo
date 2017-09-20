@@ -16,6 +16,7 @@
 		DA83444C1F717DDB001DCFE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA83444A1F717DDB001DCFE2 /* LaunchScreen.storyboard */; };
 		DA8344551F717E3B001DCFE2 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8344541F717E3B001DCFE2 /* Todo.m */; };
 		DA8344581F7184DE001DCFE2 /* TodoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8344571F7184DE001DCFE2 /* TodoListTableViewCell.m */; };
+		DA8344811F71CCED001DCFE2 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8344801F71CCED001DCFE2 /* AddItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		DA8344541F717E3B001DCFE2 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		DA8344561F7184DE001DCFE2 /* TodoListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoListTableViewCell.h; sourceTree = "<group>"; };
 		DA8344571F7184DE001DCFE2 /* TodoListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListTableViewCell.m; sourceTree = "<group>"; };
+		DA83447F1F71CCED001DCFE2 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		DA8344801F71CCED001DCFE2 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				DA8344541F717E3B001DCFE2 /* Todo.m */,
 				DA8344561F7184DE001DCFE2 /* TodoListTableViewCell.h */,
 				DA8344571F7184DE001DCFE2 /* TodoListTableViewCell.m */,
+				DA83447F1F71CCED001DCFE2 /* AddItemViewController.h */,
+				DA8344801F71CCED001DCFE2 /* AddItemViewController.m */,
 				DA8344391F717DDB001DCFE2 /* Supporting Files */,
 			);
 			path = EveryDo;
@@ -167,6 +172,7 @@
 			files = (
 				DA8344551F717E3B001DCFE2 /* Todo.m in Sources */,
 				DA8344581F7184DE001DCFE2 /* TodoListTableViewCell.m in Sources */,
+				DA8344811F71CCED001DCFE2 /* AddItemViewController.m in Sources */,
 				DA83443E1F717DDB001DCFE2 /* AppDelegate.m in Sources */,
 				DA8344411F717DDB001DCFE2 /* MasterViewController.m in Sources */,
 				DA83443B1F717DDB001DCFE2 /* main.m in Sources */,
