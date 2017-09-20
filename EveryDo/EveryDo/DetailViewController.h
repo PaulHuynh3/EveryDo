@@ -12,6 +12,8 @@
 
 @interface DetailViewController : UIViewController
 
+
+//make detailItem the Todo class so it can access its private properties.
 @property (strong, nonatomic) Todo *detailItem;
 
 @end

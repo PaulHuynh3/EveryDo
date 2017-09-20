@@ -56,13 +56,12 @@
         DetailViewController *controller = (DetailViewController*)[segue destinationViewController];
         
         //calling the tableview's property self.tableview (its uitableviewcontroller)
-        // calling the method and using the row
+        // calling the method and using the row. this method retrieves the information from the detailedViewController's private property while setting it to detailItem.
         controller.detailItem =  self.todoListArray[self.tableView.indexPathForSelectedRow.row];
-        
         
         }
     
-    //this segue savs user's items and adds it to the first view
+    //this segue saves user's items from AddViewController and adds it to the first view. Saving the delegate to the MasterViewController.
     if ([[segue identifier] isEqualToString:@"addItems"]){
         
         AddItemViewController *addController = [segue destinationViewController];
@@ -71,9 +70,6 @@
 
 
 }
-
-
-
 
 
 #pragma mark - Table View
@@ -91,10 +87,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TodoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    //specify todo property of title, priority # etc (layer on layer)
+    //specify todo property of title, priority # etc (because its layer on layer has to access the property of the class that initially created it)
     //need the NSMutableArray<Todo*> *todoListArray else i would have to make the class.title
     cell.titleLabel.text = self.todoListArray[indexPath.row].title;
     cell.descriptionLabel.text = self.todoListArray[indexPath.row].todoDescription;
+    
     
     NSInteger priorityNumber = self.todoListArray[indexPath.row].priorityNumber;
     NSString *priority = [NSString stringWithFormat:@"%lu",priorityNumber];
@@ -121,17 +118,20 @@
 }
 
 
+//this adds delete functionality
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [self.objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.todoListArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
 
 
+//this method takes the user's answers from the other view, the segue brings it back to this view and this method adds it to the array.
+//we also have this method called in AddItemViwController.m to add info from the user's answers;
 -(void)addObjectTodo:(Todo*)todo{
     
     [self.todoListArray addObject:todo];

@@ -24,12 +24,4 @@
 }
 
 
-
-
-/*
- Create a custom UITableViewCell subclass that displays the title, a one-line preview of the task description, the priority level, and strikethrough text of all other text if the task is completed. This will require you to implement the delegate and data source methods to display a cell for each todo item.
- 
- */
-
-
 @end

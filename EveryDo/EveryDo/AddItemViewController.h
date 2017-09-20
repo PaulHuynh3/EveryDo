@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UITextField *priorityNumberTextField;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *valueSegmented;
 
 
 @property (strong,nonatomic) id<AddItemViewControllerDelegate>addDelegate;

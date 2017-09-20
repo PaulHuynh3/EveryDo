@@ -37,15 +37,18 @@
     
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        //set private detailDescription  equal to public detailItem.tododescription - because im using its class
+        //set private detailDescription  equal to public detailItem.tododescription - because detailItem is now the class Todo.
         self.detailDescriptionLabel.text = self.detailItem.todoDescription;
         
         //set the number..
-        NSInteger number= self.detailItem.priorityNumber;
+        NSInteger number = self.detailItem.priorityNumber;
         NSString *priorityNumber = [NSString stringWithFormat:@"%lu",number];
         self.priorityNumberLabel.text = priorityNumber;
       
-        
+        //set bool to textlabel.
+        bool completeLabel = self.detailItem.isCompleted;
+        NSString *boolString = [NSString stringWithFormat:@"%d",completeLabel];
+        self.completeLabel.text = boolString;
         
     }
 }
